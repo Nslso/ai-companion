@@ -1,0 +1,21 @@
+# Современные версии зависимостей
+langchain==0.3.25
+langchain-core==0.3.72
+langgraph==0.6.1
+gigachat==0.1.43
+chromadb==1.3.5
+pydantic==2.7.4
+python-dotenv==1.0.0
+fastapi==0.104.1
+uvicorn==0.24.0
+langchain-gigachat==0.3.12
+gigachat==0.1.43
+numpy==1.26.4
+
+# Для визуализации
+networkx==3.1
+matplotlib==3.7.2
+
+# Ядро LlamaIndex с совместимыми версиями
+llama-index==0.10.12
+llama-index-core==0.10.12

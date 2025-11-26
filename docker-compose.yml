@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  learning-assistant:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - GIGACHAT_CREDENTIALS=${GIGACHAT_CREDENTIALS}
+      - GIGACHAT_SCOPE=${GIGACHAT_SCOPE}
+      - GIGACHAT_MODEL=${GIGACHAT_MODEL}
+      - CHROMA_PERSIST_DIR=/app/chroma_db
+      - LOG_LEVEL=INFO
+    volumes:
+      - chroma_data:/app/chroma_db
+    restart: unless-stopped
+
+  frontend:
+    image: python:3.9-slim
+    working_dir: /app/frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app/frontend
+    command: >
+      sh -c "python -m http.server 3000 --directory /app/frontend"
+    restart: unless-stopped
+
+volumes:
+  chroma_data:

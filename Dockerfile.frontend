@@ -1,0 +1,15 @@
+FROM python:3.9-slim
+
+WORKDIR /app/frontend
+
+# Копируем фронтенд файлы
+COPY frontend/ .
+
+# Устанавливаем зависимости для сервера (опционально)
+RUN pip install --no-cache-dir http-server
+
+# Открываем порт
+EXPOSE 3000
+
+# Запускаем сервер
+CMD ["python", "-m", "http.server", "3000", "--directory", "/app/frontend"]
