@@ -1,4 +1,4 @@
-# Sber Learning Companion Agent
+# Learning Companion Agent
 
 Персональный учебный ассистент с системой решения и оценки задач на основе LangGraph, Chroma и GigaChat.
 
